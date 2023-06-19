@@ -113,7 +113,6 @@ def add_user():
 
     return jsonify(modified_profile)
 
-
 @app.route('/talents', methods=['GET'])
 @cross_origin()
 def get_talents():
@@ -132,7 +131,6 @@ def search():
     }
     # usernames separated by comma in report remove spaces
     usernames = report.replace(" ", "").split(",")
-    print()
     profiles = mongo.profiles
     all_profiles = profiles.find({}, {"_id": 0})
     all_profiles = list(all_profiles)
@@ -144,9 +142,6 @@ def search():
                 filtered_profiles.append(profile)
     response["profiles"] = filtered_profiles
     return jsonify(response)
-
-
-
 
     
 @app.route('/', methods=['GET'])

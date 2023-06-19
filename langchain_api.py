@@ -18,4 +18,4 @@ def get_user(query):
     # persist index with loader db create persist db
     index = VectorstoreIndexCreator().from_loaders([loader])
 
-    return index.query(query)
+    return index.query("Act as a talent recruiter and find me all developer who knows " + query + " with their names seperated by comma.")

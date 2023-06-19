@@ -3,7 +3,8 @@ from dotenv import dotenv_values
 from tqdm import tqdm
 import redis
 import json
-
+from rq import Queue
+import time
 
 # Redis configuration
 REDIS_HOST = 'localhost'
